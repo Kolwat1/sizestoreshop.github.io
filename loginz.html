@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>เข้าสู่ระบบ / สมัครสมาชิก</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background: white;
+      width: 350px;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #667eea;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #5a67d8;
+    }
+
+    .toggle-link {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .toggle-link span {
+      color: #667eea;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container" id="form-container">
+  <form id="login-form">
+    <h2>เข้าสู่ระบบ</h2>
+    <input type="text" placeholder="ชื่อผู้ใช้" required>
+    <input type="password" placeholder="รหัสผ่าน" required>
+    <button type="submit">เข้าสู่ระบบ</button>
+    <div class="toggle-link">
+      ยังไม่มีบัญชี? <span onclick="toggleForm()">สมัครสมาชิก</span>
+    </div>
+  </form>
+
+  <form id="register-form" style="display: none;">
+    <h2>สมัครสมาชิก</h2>
+    <input type="text" placeholder="ชื่อผู้ใช้" required>
+    <input type="email" placeholder="อีเมล" required>
+    <input type="password" placeholder="รหัสผ่าน" required>
+    <button type="submit">สมัครสมาชิก</button>
+    <div class="toggle-link">
+      มีบัญชีอยู่แล้ว? <span onclick="toggleForm()">เข้าสู่ระบบ</span>
+    </div>
+  </form>
+</div>
+
+<script>
+  function toggleForm() {
+    const loginForm = document.getElementById('login-form');
+    const registerForm = document.getElementById('register-form');
+    if (loginForm.style.display === "none") {
+      loginForm.style.display = "block";
+      registerForm.style.display = "none";
+    } else {
+      loginForm.style.display = "none";
+      registerForm.style.display = "block";
+    }
+  }
+</script>
+
+</body>
+</html>
